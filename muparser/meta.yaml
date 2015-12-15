@@ -1,0 +1,15 @@
+package:
+  name: muparser
+  version: "2.2.5"
+
+build:
+  number: 2
+
+source:
+  svn_url: http://muparser.googlecode.com/svn/trunk
+  svn_rev: 37
+
+
+about:
+  home: http://muparser.beltoforion.de
+  license: MIT

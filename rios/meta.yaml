@@ -1,0 +1,26 @@
+package:
+  name: rios
+  version: 1.4.1
+
+build:
+  number: 0
+
+source:
+  hg_url: https://bitbucket.org/chchrsc/rios
+  hg_tag: tip
+
+requirements:
+  build:
+    - python
+    - numpy
+    - gdal
+  run:
+    - python
+    - numpy
+    - gdal
+    - scipy
+    
+about:
+  home: http://rioshome.org/
+  license: GPLv3
+  summary: Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.
