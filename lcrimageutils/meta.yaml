@@ -1,0 +1,29 @@
+package:
+  name: lcrimageutils
+  version: 0.1
+
+source:
+  hg_url: https://bitbucket.org/chchrsc/lcrimageutils
+
+requirements:
+  build:
+    - python
+    - numpy
+    - gdal
+    - rios
+    - numba
+  run:
+    - python
+    - numpy
+    - gdal
+    - rios
+    - numba
+
+build:
+  number: 0
+
+
+about:
+  home: https://bitbucket.org/chchrsc/lcrimageutils/overview
+  license: GPLv2
+  summary: Collection of utilities from QLD DERM and some from NZ Landcare. This build just has the Python parts.
