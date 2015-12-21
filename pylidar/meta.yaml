@@ -9,6 +9,7 @@ requirements:
   build:
     - python
     - numpy
+    - lastools
   run:
     - python
     - numpy
@@ -16,9 +17,10 @@ requirements:
     - rios
     - numba
     - h5py
+    - lastools
 
 build:
-  number: 0
+  number: 1
 
 about:
   home: http://pylidar.org/

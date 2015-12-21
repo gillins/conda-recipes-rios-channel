@@ -14,4 +14,7 @@ if [ -d "$RIWAVELIB_ROOT" ]; then
     export RIWAVELIB_ROOT
 fi
 
+# this should always be installed - part of the prereqs
+export LASTOOLS_ROOT=$PREFIX
+
 python setup.py install --prefix=$PREFIX
