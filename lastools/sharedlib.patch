@@ -1,0 +1,25 @@
+--- LASlib/src/Makefile.orig	2015-12-21 16:07:38.462924902 +1000
++++ LASlib/src/Makefile	2015-12-21 16:08:22.140754820 +1000
+@@ -1,7 +1,7 @@
+ # makefile for liblas.a
+ #
+ #COPTS    = -g -Wall
+-COPTS     = -O3 -Wall -Wno-deprecated -DNDEBUG -DUNORDERED
++COPTS     = -O3 -Wall -Wno-deprecated -DNDEBUG -DUNORDERED -fPIC
+ COMPILER  = g++
+ AR  = ar rc
+ #BITS     = -64
+@@ -12,10 +12,10 @@
+ 
+ OBJ_LAZ		= ../../LASzip/src/laszip.o ../../LASzip/src/lasreadpoint.o ../../LASzip/src/lasreaditemcompressed_v1.o ../../LASzip/src/lasreaditemcompressed_v2.o ../../LASzip/src/laswritepoint.o  ../../LASzip/src/laswriteitemcompressed_v1.o ../../LASzip/src/laswriteitemcompressed_v2.o ../../LASzip/src/integercompressor.o ../../LASzip/src/arithmeticdecoder.o ../../LASzip/src/arithmeticencoder.o ../../LASzip/src/arithmeticmodel.o ../../LASzip/src/lasindex.o ../../LASzip/src/lasquadtree.o ../../LASzip/src/lasinterval.o 
+ 
+-all: liblas.a
++all: liblas.so
+ 
+-liblas.a: ${OBJ_LAZ} ${OBJ_LAS} 
+-	$(AR) $@ ${OBJ_LAZ} ${OBJ_LAS}
++liblas.so: ${OBJ_LAZ} ${OBJ_LAS} 
++	${COMPILER} -shared -o $@ ${OBJ_LAZ} ${OBJ_LAS}
+ 	cp -p $@ ../lib
+ 
+ .cpp.o:

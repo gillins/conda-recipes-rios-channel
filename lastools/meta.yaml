@@ -1,0 +1,16 @@
+package:
+  name: lastools
+  version: "20151130"
+
+source:
+  fn: LAStools.zip
+  url: http://www.cs.unc.edu/~isenburg/lastools/download/LAStools.zip
+  patches:
+    - sharedlib.patch
+
+build:
+  number: 0
+
+about:
+  home: http://www.cs.unc.edu/~isenburg/lastools/
+  license: LGPL
