@@ -12,6 +12,8 @@ source:
 
 build:
   number: 0
+  features:
+    - vc10 [win]
 
 about:
   home: http://www.cs.unc.edu/~isenburg/lastools/

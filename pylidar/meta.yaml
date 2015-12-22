@@ -17,7 +17,7 @@ requirements:
     - rios
     - numba
     - h5py
-    - lastools
+    - lastools [not win]
 
 build:
   number: 1
