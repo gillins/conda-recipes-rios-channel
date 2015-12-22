@@ -1,0 +1,14 @@
+--- makefile.vc	1970-01-01 10:00:00.000000000 +1000
++++ makefile.vc	2015-12-22 13:47:29.923994300 +1000
+@@ -0,0 +1,11 @@
++
++CPPFLAGS = /Ox /EHsc /ILASlib\inc /ILASzip\src /D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS
++
++OBJ_LAS		= LASlib\src\lasreader.obj LASlib\src\laswriter.obj LASlib\src\lasreader_las.obj LASlib\src\lasreader_bin.obj LASlib\src\lasreader_qfit.obj LASlib\src\lasreader_shp.obj LASlib\src\lasreader_asc.obj LASlib\src\lasreader_bil.obj LASlib\src\lasreader_dtm.obj LASlib\src\lasreader_txt.obj LASlib\src\lasreadermerged.obj LASlib\src\lasreaderbuffered.obj LASlib\src\lasreaderpipeon.obj LASlib\src\laswriter_las.obj LASlib\src\laswriter_bin.obj LASlib\src\laswriter_qfit.obj LASlib\src\laswriter_wrl.obj LASlib\src\laswriter_txt.obj LASlib\src\laswritercompatible.obj LASlib\src\laswaveform13reader.obj LASlib\src\laswaveform13writer.obj LASlib\src\lasutility.obj LASlib\src\lasfilter.obj LASlib\src\lastransform.obj LASlib\src\fopen_compressed.obj
++OBJ_LAZ		= LASzip\src\laszip.obj LASzip\src\lasreadpoint.obj LASzip\src\lasreaditemcompressed_v1.obj LASzip\src\lasreaditemcompressed_v2.obj LASzip\src\laswritepoint.obj  LASzip\src\laswriteitemcompressed_v1.obj LASzip\src\laswriteitemcompressed_v2.obj LASzip\src\integercompressor.obj LASzip\src\arithmeticdecoder.obj LASzip\src\arithmeticencoder.obj LASzip\src\arithmeticmodel.obj LASzip\src\lasindex.obj LASzip\src\lasquadtree.obj LASzip\src\lasinterval.obj 
++
++.cpp.obj:
++  $(CPP) $(CPPFLAGS) /Fo$*.obj /c $<
++
++laslib.lib: $(OBJ_LAZ) $(OBJ_LAS)
++    lib.exe $(OBJ_LAZ) $(OBJ_LAS) /OUT:laslib.lib

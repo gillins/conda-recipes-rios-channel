@@ -6,7 +6,9 @@ source:
   fn: LAStools.zip
   url: http://www.cs.unc.edu/~isenburg/lastools/download/LAStools.zip
   patches:
-    - sharedlib.patch
+    - sharedlib.patch [not win]
+    - vc_makefile.patch [win]
+    - mydefs.hpp.patch [win]
 
 build:
   number: 0
