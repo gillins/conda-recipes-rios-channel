@@ -4,7 +4,6 @@ package:
 
 source:
   hg_url: https://bitbucket.org/chchrsc/tuiview
-  hg_tag: tuiview-1.1.7
 
 requirements:
   build:
