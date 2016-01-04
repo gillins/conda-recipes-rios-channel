@@ -1,12 +1,13 @@
 package:
   name: python-fmask
-  version: 0.2
+  version: 0.2.1
 
 build:
   number: 0
 
 source:
   hg_url: https://bitbucket.org/chchrsc/python-fmask
+  hg_tag: python-fmask-0.2.1
 
 requirements:
   build:
