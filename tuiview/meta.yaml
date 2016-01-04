@@ -1,9 +1,10 @@
 package:
   name: tuiview
-  version: 1.1.6
+  version: 1.1.7
 
 source:
   hg_url: https://bitbucket.org/chchrsc/tuiview
+  hg_tag: tuiview-1.1.7
 
 requirements:
   build:
@@ -18,7 +19,7 @@ requirements:
     - pyqt
 
 build:
-  number: 3
+  number: 0
 
 
 about:
