@@ -1,6 +1,6 @@
 package:
   name: rios
-  version: 1.4.1
+  version: 1.4.2
 
 build:
   number: 0
@@ -18,7 +18,6 @@ requirements:
     - python
     - numpy
     - gdal
-    - scipy
     
 about:
   home: http://rioshome.org/
