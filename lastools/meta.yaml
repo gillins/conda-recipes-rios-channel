@@ -1,10 +1,10 @@
 package:
   name: lastools
-  version: "20151130"
+  version: "20160124"
 
 source:
-  fn: LAStools.zip
-  url: http://www.cs.unc.edu/~isenburg/lastools/download/LAStools.zip
+  fn: lastools.zip
+  url: http://www.cs.unc.edu/~isenburg/lastools/download/lastools.zip
   patches:
     - sharedlib.patch [not win]
     - vc_makefile.patch [win]
@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   features:
-    - vc10 [win]
+    - vc10 [win and py34]
 
 about:
   home: http://www.cs.unc.edu/~isenburg/lastools/
