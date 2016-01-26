@@ -1,6 +1,6 @@
---- makefile.vc	1970-01-01 10:00:00.000000000 +1000
-+++ makefile.vc	2015-12-22 13:47:29.923994300 +1000
-@@ -0,0 +1,11 @@
+--- makefile.vc.empty	2016-01-26 17:15:21.879226600 +1000
++++ makefile.vc	2016-01-26 17:15:53.928054700 +1000
+@@ -0,0 +1,43 @@
 +
 +CPPFLAGS = /Ox /EHsc /ILASlib\inc /ILASzip\src /D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS /DNDEBUG /MD /nologo
 +
@@ -10,5 +10,37 @@
 +.cpp.obj:
 +  $(CPP) $(CPPFLAGS) /Fo$*.obj /c $<
 +
++all: laslib.lib laszip.exe lasinfo.exe lasprecision.exe las2txt.exe txt2las.exe las2las.exe lasdiff.exe lasmerge.exe lasindex.exe
++  
 +laslib.lib: $(OBJ_LAZ) $(OBJ_LAS)
 +    lib.exe $(OBJ_LAZ) $(OBJ_LAS) /OUT:laslib.lib
++    
++laszip.exe: src\laszip.obj src\geoprojectionconverter.obj
++    link.exe src\laszip.obj src\geoprojectionconverter.obj laslib.lib /OUT:laszip.exe 
++
++lasinfo.exe: src\lasinfo.obj src\geoprojectionconverter.obj
++    link.exe src\lasinfo.obj src\geoprojectionconverter.obj laslib.lib /OUT:lasinfo.exe 
++
++lasprecision.exe: src\lasprecision.obj src\geoprojectionconverter.obj
++    link.exe src\lasprecision.obj src\geoprojectionconverter.obj laslib.lib /OUT:lasprecision.exe 
++
++las2txt.exe: src\las2txt.obj
++    link.exe src\las2txt.obj laslib.lib /OUT:las2txt.exe 
++
++txt2las.exe: src\txt2las.obj src\geoprojectionconverter.obj
++    link.exe src\txt2las.obj src\geoprojectionconverter.obj laslib.lib /OUT:txt2las.exe 
++
++las2las.exe: src\las2las.obj src\geoprojectionconverter.obj
++    link.exe src\las2las.obj src\geoprojectionconverter.obj laslib.lib /OUT:las2las.exe 
++
++lasdiff.exe: src\lasdiff.obj
++    link.exe src\lasdiff.obj laslib.lib /OUT:lasdiff.exe 
++
++lasmerge.exe: src\lasmerge.obj src\geoprojectionconverter.obj
++    link.exe src\lasmerge.obj src\geoprojectionconverter.obj laslib.lib /OUT:lasmerge.exe 
++
++lasindex.exe: src\lasindex.obj
++    link.exe src\lasindex.obj laslib.lib /OUT:lasindex.exe 
++    
++clean:
++    del $(OBJ_LAZ) $(OBJ_LAS) *.exe
