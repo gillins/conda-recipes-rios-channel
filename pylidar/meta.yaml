@@ -17,10 +17,10 @@ requirements:
     - rios
     - numba
     - h5py
-    - lastools [not win]
+    - lastools
 
 build:
-  number: 2
+  number: 3
 
 about:
   home: http://pylidar.org/

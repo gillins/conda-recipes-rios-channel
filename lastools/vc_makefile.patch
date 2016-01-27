@@ -1,6 +1,6 @@
 --- makefile.vc.empty	2016-01-26 17:15:21.879226600 +1000
-+++ makefile.vc	2016-01-26 17:15:53.928054700 +1000
-@@ -0,0 +1,43 @@
++++ makefile.vc	2016-01-27 18:04:36.812359900 +1000
+@@ -0,0 +1,52 @@
 +
 +CPPFLAGS = /Ox /EHsc /ILASlib\inc /ILASzip\src /D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS /DNDEBUG /MD /nologo
 +
@@ -10,10 +10,19 @@
 +.cpp.obj:
 +  $(CPP) $(CPPFLAGS) /Fo$*.obj /c $<
 +
-+all: laslib.lib laszip.exe lasinfo.exe lasprecision.exe las2txt.exe txt2las.exe las2las.exe lasdiff.exe lasmerge.exe lasindex.exe
++all: laslib.dll laszip.exe lasinfo.exe lasprecision.exe las2txt.exe txt2las.exe las2las.exe lasdiff.exe lasmerge.exe lasindex.exe
 +  
-+laslib.lib: $(OBJ_LAZ) $(OBJ_LAS)
-+    lib.exe $(OBJ_LAZ) $(OBJ_LAS) /OUT:laslib.lib
++laslib_s.lib: $(OBJ_LAZ) $(OBJ_LAS)
++    lib.exe $(OBJ_LAZ) $(OBJ_LAS) /OUT:laslib_s.lib
++    
++laslib_s.exp: laslib_s.lib
++    dumpbin.exe laslib_s.lib /LINKERMEMBER:1 /OUT:laslib_s.exp
++    
++laslib.def: laslib_s.exp
++    python makedef.py laslib_s.exp laslib.def
++    
++laslib.dll: laslib_s.lib laslib.def
++    link.exe /DLL /OUT:laslib.dll /DEF:laslib.def laslib_s.lib
 +    
 +laszip.exe: src\laszip.obj src\geoprojectionconverter.obj
 +    link.exe src\laszip.obj src\geoprojectionconverter.obj laslib.lib /OUT:laszip.exe 
@@ -43,4 +52,4 @@
 +    link.exe src\lasindex.obj laslib.lib /OUT:lasindex.exe 
 +    
 +clean:
-+    del $(OBJ_LAZ) $(OBJ_LAS) *.exe
++    del $(OBJ_LAZ) $(OBJ_LAS) *.exp *.def *.lib *.exe src\*.obj
