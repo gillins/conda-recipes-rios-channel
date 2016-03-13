@@ -1,0 +1,11 @@
+--- src/makefile.orig	2016-03-13 15:55:11.436598742 +1000
++++ src/makefile	2016-03-13 17:10:29.404598555 +1000
+@@ -96,7 +96,7 @@
+ 	$(if $(NE_ANSI),    -DTERMCAP -DANSI,)
+ 
+ 
+-LIBS=$(if $(NE_TERMCAP)$(NE_ANSI),,-lcurses)
++LIBS=$(if $(NE_TERMCAP)$(NE_ANSI),,-L$(PREFIX)/lib -lncursesw -ltinfo)
+ 
+ ne:	$(OBJS) $(if $(NE_TERMCAP)$(NE_ANSI),$(TERMCAPOBJS),)
+ 	$(CC) $(OPTS) $(LDFLAGS) $(if $(NE_TEST), -coverage -lefence,) $^ -lm $(LIBS) -o $(PROGRAM)
