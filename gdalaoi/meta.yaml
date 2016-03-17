@@ -11,7 +11,7 @@ build:
 
 requirements:
   build:
-    - cmake
+    - cmake [not win]
     - libgdal
   run:
     - libgdal
