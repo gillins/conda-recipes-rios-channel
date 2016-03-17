@@ -1,0 +1,22 @@
+package:
+  name: gdalaoi
+  version: "0.1.0"
+
+source:
+  hg_url: https://bitbucket.org/chchrsc/gdalaoi
+  hg_tag: tip
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - cmake
+    - libgdal
+  run:
+    - libgdal
+
+about:
+  home: https://bitbucket.org/chchrsc/gdalaoi
+  license: X/MIT
+  summary: OGR Driver for Imagine .aoi files
