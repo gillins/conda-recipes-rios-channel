@@ -1,6 +1,6 @@
 package:
   name: lastools
-  version: "20160124"
+  version: "20160329"
 
 source:
   fn: lastools.zip
@@ -12,12 +12,16 @@ source:
     - makedef.py.patch [win]
 
 build:
-  number: 1
+  number: 0
   features:
-    - vc9 [win and py27]
-    - vc10 [win and py34]
-    - vc14 [win and py35]
+    - vc9  # [win and py27]
+    - vc10  # [win and py34]
+    - vc14  # [win and py35]
 
+requirements:
+  build:
+    - python # [win]
+    
 about:
   home: http://www.cs.unc.edu/~isenburg/lastools/
   license: LGPL
