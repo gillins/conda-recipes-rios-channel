@@ -3,6 +3,7 @@ cmake -G "NMake Makefiles" ^
 -D GDAL_INCLUDE_DIR=%LIBRARAY_INC% ^
 -D GDAL_LIB_PATH=%LIBRARY_LIB% ^
 -D GDAL_SRC_PATH=c:\gdal-2.0.2 ^
+-D CMAKE_BUILD_TYPE=Release ^
 -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
 .
 if errorlevel 1 exit 1
