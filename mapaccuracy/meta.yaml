@@ -3,7 +3,7 @@ package:
   version: 0.9.2
 
 source:
-  git_url: https://gillins@bitbucket.org/landcareresearch/mapaccuracy
+  git_url: https://gillins@bitbucket.org/landcareresearch/mapaccuracy.git
 
 requirements:
   build:
