@@ -20,7 +20,7 @@ requirements:
     - numba
 
 build:
-  number: 0
+  number: 1
 
 
 about:
