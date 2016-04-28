@@ -1,0 +1,11 @@
+
+cmake -D CMAKE_INSTALL_PREFIX=${PREFIX} \
+-D GDAL_INCLUDE_DIR=${PREFIX}/include \
+-D GDAL_LIB_PATH=${PREFIX}/lib \
+-D LIBCACA_INCLUDE_DIR=${PREFIX}/include \
+-D LIBCACA_LIB_PATH=${PREFIX}/lib \
+.
+
+make
+make install
+

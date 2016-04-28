@@ -1,0 +1,29 @@
+package:
+    name: gdalcacaview
+    version: 1.0.0
+
+source:
+    hg_url: https://bitbucket.org/chchrsc/gdalcacaview
+    hg_tag: tip
+
+build:
+    number: 0
+    features:
+        - vc9  # [win and py27]
+        - vc10  # [win and py34]
+        - vc14  # [win and py35]
+
+requirements:
+    build:
+        - python [win]
+        - cmake
+        - gdal
+        - libcaca
+    run:
+        - gdal
+        - libcaca
+
+about:
+    home: https://bitbucket.org/chchrsc/gdalcacaview/overview
+    license: WTFPL
+    summary: libcaca viewer for GDAL files
