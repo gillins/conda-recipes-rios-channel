@@ -1,21 +1,30 @@
 package:
-  name: libcaca
-  version: "0.99"
+    name: libcaca
+    version: "0.99"
 
 source:
-  fn: libcaca-0.99.beta19.tar.gz
-  url: http://caca.zoy.org/files/libcaca/libcaca-0.99.beta19.tar.gz
+    fn: libcaca-0.99.beta19.tar.gz
+    url: http://caca.zoy.org/files/libcaca/libcaca-0.99.beta19.tar.gz
+    patches:
+        - CMakeLists.txt.patch  # [win]
+        - config.h.patch  # [win and py35]
 
 build:
-  number: 20
-
+    number: 20
+    features:
+        - vc9  # [win and py27]
+        - vc10  # [win and py34]
+        - vc14  # [win and py35]
+        
 requirements:
-  build:
-    - ncurses [not win]
-  run:
-    - ncurses [not win]
+    build:
+        - python  # [win]
+        - cmake  # [win]
+        - ncurses  # [not win]
+    run:
+        - ncurses  # [not win]
 
 about:
-  home: http://caca.zoy.org/wiki/libcaca
-  license: WTFPL
-  summary: libcaca is a graphics library that outputs text instead of pixels, so that it can work on older video cards or text terminals
+    home: http://caca.zoy.org/wiki/libcaca
+    license: WTFPL
+    summary: libcaca is a graphics library that outputs text instead of pixels, so that it can work on older video cards or text terminals

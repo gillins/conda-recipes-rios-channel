@@ -1,0 +1,9 @@
+--- win32\config.h.orig	2012-12-29 03:34:12.000000000 +1000
++++ win32\config.h	2016-04-29 14:25:24.562854600 +1000
+@@ -93,5 +93,5 @@
+ #define inline __inline
+ #endif
+ #define strcasecmp stricmp
+-#define snprintf _snprintf
++/* #define snprintf _snprintf */
+ 
