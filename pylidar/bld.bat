@@ -16,8 +16,8 @@ IF "%MSVC_VER%"=="" (
     exit 1
 )
 
-set "RIVLIB_ROOT=c:\dev\rivlib-2_1_1-x86_64-windows-vc%MSVC_VER%"
-set "RIWAVELIB_ROOT=c:\dev\riwavelib_wfm-2_0_1-x86_64-windows-vc%MSVC_VER%"
+set "RIVLIB_ROOT=c:\dev\rivlib-2_3_0-x86_64-windows-vc%MSVC_VER%"
+set "RIWAVELIB_ROOT=c:\dev\riwavelib_wfm-2_3_0-x86_64-windows-vc%MSVC_VER%"
 
 if not exist %RIVLIB_ROOT% (set "RIVLIB_ROOT=")
 if not exist %RIWAVELIB_ROOT% (set "RIWAVELIB_ROOT=")

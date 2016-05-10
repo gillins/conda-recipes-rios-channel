@@ -20,7 +20,7 @@ requirements:
     - lastools
 
 build:
-  number: 2
+  number: 3
 
 about:
   home: http://pylidar.org/
