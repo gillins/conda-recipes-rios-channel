@@ -5,6 +5,7 @@
 --enable-java=no \
 --enable-python=no \
 --enable-ruby=no \
+--enable-gl=no \
 --enable-shared=yes \
 --enable-static=no
 
