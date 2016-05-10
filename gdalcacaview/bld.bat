@@ -5,6 +5,7 @@ cmake -G "NMake Makefiles" ^
       -D GDAL_LIB_PATH=%LIBRARY_LIB% ^
       -D LIBCACA_INCLUDE_DIR=%LIBRARY_INC% ^
       -D LIBCACA_LIB_PATH=%LIBRARY_LIB% ^
+      -D CMAKE_BUILD_TYPE=Release ^
       .
 if errorlevel 1 exit 1
 
