@@ -14,9 +14,9 @@ requirements:
     - numpy
 
 build:
-  number: 0
+  number: 1
 
 about:
   home: https://bitbucket.org/petebunting/pynninterp
-  license: GPLv3
+  license_file: LICENSE.txt
   summary: Natural Neighbour Interpolation for use with PyLidar.
