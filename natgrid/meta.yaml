@@ -1,0 +1,32 @@
+{% set version = "0.2" %}
+
+package:
+    name: natgrid
+    version: {{ version }}
+    
+source:
+    git_url: https://github.com/matplotlib/natgrid.git
+    
+build:
+    number: 0
+    script: python setup.py install
+
+requirements:
+    build:
+        - python
+        
+    run:
+        - python
+
+test:
+    imports:
+        - mpl_toolkits.natgrid
+        
+about:
+    home: https://github.com/matplotlib/natgrid
+    license_file: README
+    summary: Python interface to NCAR natgrid library (http://www.ncarg.ucar.edu//ngmath/natgrid/nnhome.html).
+
+extra:
+    recipe-maintainers:
+        - gillins
