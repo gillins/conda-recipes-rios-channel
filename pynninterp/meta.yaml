@@ -5,6 +5,10 @@ package:
 source:
   hg_url: https://bitbucket.org/petebunting/pynninterp
 
+build:
+  number: 4
+  script: python setup.py install
+
 requirements:
   build:
     - python
@@ -13,8 +17,9 @@ requirements:
     - python
     - numpy
 
-build:
-  number: 3
+test:
+    imports:
+        - pynninterp
 
 about:
   home: https://bitbucket.org/petebunting/pynninterp
