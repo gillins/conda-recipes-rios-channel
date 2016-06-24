@@ -1,15 +1,12 @@
 package:
   name: lastools
-  version: "20160329"
+  version: "20160606"
 
 source:
   fn: lastools.zip
   url: http://www.cs.unc.edu/~isenburg/lastools/download/lastools.zip
   patches:
-    - sharedlib.patch [not win]
-    - vc_makefile.patch [win]
-    - mydefs.hpp.patch [win]
-    - makedef.py.patch [win]
+    - CMakeLists.patch
 
 build:
   number: 0
@@ -20,8 +17,11 @@ build:
 
 requirements:
   build:
-    - python # [win]
+    - python  # [win]
+    - cmake
     
 about:
   home: http://www.cs.unc.edu/~isenburg/lastools/
-  license: LGPL
+  license: LGPL2.1
+  license_file: LICENSE.txt
+  summary: award-winning software for efficient LiDAR processing (with LASzip)
