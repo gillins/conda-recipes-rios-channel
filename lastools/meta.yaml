@@ -19,6 +19,7 @@ requirements:
   build:
     - python  # [win]
     - cmake
+    - toolchain
     
 about:
   home: http://www.cs.unc.edu/~isenburg/lastools/
