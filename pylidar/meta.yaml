@@ -1,6 +1,6 @@
 package:
   name: pylidar
-  version: 0.2.0
+  version: 0.2.1
 
 source:
   hg_url: https://bitbucket.org/chchrsc/pylidar
@@ -20,7 +20,7 @@ requirements:
     - lastools
 
 build:
-  number: 6
+  number: 0
 
 about:
   home: http://pylidar.org/
