@@ -25,8 +25,7 @@ if not exist %RIWAVELIB_ROOT% (set "RIWAVELIB_ROOT=")
 set LASTOOLS_ROOT=%LIBRARY_LIB%
 
 REM use Python entry points instead of our programs in bin
-REM set PYLIDAR_NOCMDLINE=1
-REM Doesn't seem to work on Windows
+set PYLIDAR_NOCMDLINE=1
 
 %PYTHON% setup.py install
 if errorlevel 1 exit 1
