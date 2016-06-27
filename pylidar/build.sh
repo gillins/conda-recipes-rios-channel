@@ -17,4 +17,7 @@ fi
 # this should always be installed - part of the prereqs
 export LASTOOLS_ROOT=$PREFIX
 
+# use Python entry points instead of our programs in bin
+export PYLIDAR_NOCMDLINE=1
+
 $PYTHON setup.py install --prefix=$PREFIX
