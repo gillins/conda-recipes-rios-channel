@@ -8,6 +8,8 @@ source:
   patches:
     - CMakeLists.patch
     - mydefs.patch  # [win]
+    - stdext.patch  # [win and py27]
+    - stdext2.patch  # [win and py27]
 
 build:
   number: 0

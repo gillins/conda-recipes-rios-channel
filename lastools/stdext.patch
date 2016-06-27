@@ -1,0 +1,10 @@
+--- LASzip\src\lasindex.cpp.orig	2016-06-28 09:19:01.475853000 +1000
++++ LASzip\src\lasindex.cpp	2016-06-28 09:19:26.132103000 +1000
+@@ -58,6 +58,7 @@
+ #else
+ #include <hash_map>
+ using namespace std;
++using namespace stdext; /* For VS 2008 */
+ typedef hash_map<I32,U32> my_cell_hash;
+ #endif
+ 
