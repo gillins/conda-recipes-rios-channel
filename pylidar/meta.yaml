@@ -20,7 +20,7 @@ requirements:
     - lastools
 
 build:
-  number: 1
+  number: 2
   entry_points:
     - pylidar_index = pylidar.toolbox.cmdline.index:run
     - pylidar_translate = pylidar.toolbox.cmdline.translate:run
