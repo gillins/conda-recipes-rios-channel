@@ -22,7 +22,7 @@ set "RIWAVELIB_ROOT=c:\dev\riwavelib_wfm-2_3_0-x86_64-windows-vc%MSVC_VER%"
 if not exist %RIVLIB_ROOT% (set "RIVLIB_ROOT=")
 if not exist %RIWAVELIB_ROOT% (set "RIWAVELIB_ROOT=")
 
-set LASTOOLS_ROOT=%LIBRARY_LIB%
+set LASTOOLS_ROOT=%LIBRARY_PREFIX%
 
 REM use Python entry points instead of our programs in bin
 set PYLIDAR_NOCMDLINE=1
