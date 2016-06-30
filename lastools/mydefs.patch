@@ -1,0 +1,11 @@
+--- LASzip\src\mydefs.hpp.orig	2016-06-27 16:21:32.457437500 +1000
++++ LASzip\src\mydefs.hpp	2016-06-27 16:21:42.551187500 +1000
+@@ -66,7 +66,7 @@
+ typedef float              F32;
+ typedef double             F64;
+ 
+-#if defined(_MSC_VER) && (_MSC_VER < 1300) || defined (__MINGW32__)
++#if defined(_MSC_VER) || defined (__MINGW32__)
+ typedef int                BOOL;
+ #else
+ typedef bool               BOOL;
