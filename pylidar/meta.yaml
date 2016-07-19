@@ -27,6 +27,7 @@ build:
     - pylidar_translate = pylidar.toolbox.cmdline.translate:run
     - pylidar_info = pylidar.toolbox.cmdline.info:run
     - pylidar_tile = pylidar.toolbox.cmdline.tile:run
+    - pylidar_rasterize = pylidar.toolbox.cmdline.rasterize:run
 
 about:
   home: http://pylidar.org/
