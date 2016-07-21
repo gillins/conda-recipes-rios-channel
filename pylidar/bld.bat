@@ -23,6 +23,7 @@ if not exist %RIVLIB_ROOT% (set "RIVLIB_ROOT=")
 if not exist %RIWAVELIB_ROOT% (set "RIWAVELIB_ROOT=")
 
 set LASTOOLS_ROOT=%LIBRARY_PREFIX%
+set ZLIB_ROOT=%LIBRARY_PREFIX%
 
 REM use Python entry points instead of our programs in bin
 set PYLIDAR_NOCMDLINE=1
