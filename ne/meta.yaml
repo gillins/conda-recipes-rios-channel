@@ -3,19 +3,21 @@ package:
   version: "3.0.1"
 
 build:
-  number: 2
+  number: 3
+  detect_binary_files_with_prefix: True
+  skip: True  # [win]
 
 source:
   fn: ne-3.0.1.tar.gz
   url: http://ne.di.unimi.it/ne-3.0.1.tar.gz
   patches:
-    - ncurses.patch [not win]
+    - ncurses.patch
 
 requirements:
   build:
-    - ncurses [not win]
+    - ncurses
   run:
-    - ncurses [not win]
+    - ncurses
 
 about:
   home: http://ne.di.unimi.it

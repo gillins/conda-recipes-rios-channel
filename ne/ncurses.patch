@@ -5,7 +5,7 @@
  
  
 -LIBS=$(if $(NE_TERMCAP)$(NE_ANSI),,-lcurses)
-+LIBS=$(if $(NE_TERMCAP)$(NE_ANSI),,-L$(PREFIX)/lib -lncursesw -ltinfo)
++LIBS=$(if $(NE_TERMCAP)$(NE_ANSI),,-L$(PREFIX)/lib -lncurses -ltinfo)
  
  ne:	$(OBJS) $(if $(NE_TERMCAP)$(NE_ANSI),$(TERMCAPOBJS),)
  	$(CC) $(OPTS) $(LDFLAGS) $(if $(NE_TEST), -coverage -lefence,) $^ -lm $(LIBS) -o $(PROGRAM)
