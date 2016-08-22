@@ -1,0 +1,22 @@
+package:
+  name: pyeq3
+  version: 1.0
+
+source:
+  git_url: https://github.com/zunzun/pyeq3.git
+
+requirements:
+  build:
+    - python
+  run:
+    - python
+    - scipy
+
+build:
+  number: 0
+  skip: True  # [py27]
+
+about:
+  home: https://github.com/zunzun/pyeq3
+  license_file: LICENSE.txt
+  summary: A huge collection of equations for Python 3 curve fitting and surface fitting that can output source code in several computing languages, and run a genetic algorithm for initial parameter estimation
