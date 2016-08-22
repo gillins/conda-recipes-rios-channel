@@ -1,0 +1,30 @@
+package:
+  name: zunzunsite
+  version: 1.0
+
+source:
+  git_url: https://github.com/zunzun/zunzunsite3.git
+  patches:
+    - settings.patch
+    - startzunzun.patch
+
+requirements:
+  build:
+    - python
+  run:
+    - python
+    - scipy
+    - django 1.9.*
+    - matplotlib
+    - beautifulsoup4
+    - reportlab
+    - pyeq3
+
+build:
+  number: 0
+  skip: True  # [py27]
+
+about:
+  home: https://github.com/zunzun/zunzunsite3
+  license_file: LICENSE.txt
+  summary: A Django site in Python 3 for curve fitting 2D and 3D data that can output source code in several computing languages and run a genetic algorithm for initial parameter estimation

@@ -1,0 +1,8 @@
+--- /dev/null	2016-08-22 08:45:20.844906193 +1000
++++ startzunzun.sh	2016-08-22 13:28:40.322167589 +1000
+@@ -0,0 +1,5 @@
++#!/bin/sh
++
++cd `python -c 'import site;print(site.getsitepackages()[0])'`/zunzunsite
++python manage.py runserver
++

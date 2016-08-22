@@ -1,0 +1,13 @@
+--- settings.py.orig	2016-08-22 13:20:56.682151215 +1000
++++ settings.py	2016-08-22 13:07:36.962122971 +1000
+@@ -83,8 +83,8 @@
+ )
+ 
+ INSTALLED_APPS = (
+-#    'django.contrib.auth',
+-#    'django.contrib.contenttypes',
++    'django.contrib.auth',
++    'django.contrib.contenttypes',
+     'django.contrib.sessions',
+ #    'django.contrib.sites',
+     'django.contrib.staticfiles',
