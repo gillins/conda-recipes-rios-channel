@@ -1,15 +1,16 @@
 package:
   name: rsgislib
-  version: "2.2.1064"
+  version: "3.0.1139"
 
 build:
-    number: 1
+    number: 0
 
 source:
   hg_url: https://bitbucket.org/petebunting/rsgislib
 
 requirements:
   build:
+    - toolchain
     - cmake
     - boost
     - hdf5
@@ -17,7 +18,7 @@ requirements:
     - muparser
     - gsl
     - geos
-    - proj4
+    - proj.4
     - gdal
     - kealib
     - gmp
@@ -32,7 +33,7 @@ requirements:
     - muparser
     - gsl
     - geos
-    - proj4
+    - proj.4
     - gdal
     - kealib
     - gmp
