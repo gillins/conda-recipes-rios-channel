@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2016-07-16 15:11:41.330820964 +0100
++++ CMakeLists.txt	2016-07-16 15:11:56.738820661 +0100
+@@ -241,7 +241,7 @@
+     if (MSVC)
+         set(LIBLAS_LIBRARIES -LIBPATH:${LIBLAS_LIB_PATH} liblas.lib liblas_c.lib)
+     else()
+-        set(LIBLAS_LIBRARIES -L${LIBLAS_LIB_PATH} -llas)
++        set(LIBLAS_LIBRARIES -L${LIBLAS_LIB_PATH} -llaslib)
+     endif(MSVC)
+     
+     include_directories(${CGAL_INCLUDE_DIR})

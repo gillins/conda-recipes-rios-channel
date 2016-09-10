@@ -1,0 +1,30 @@
+package:
+  name: spd3dpointsviewer
+  version: "2.3.0"
+
+build:
+  number: 0
+
+source:
+  hg_url: https://bitbucket.org/petebunting/spd-3d-points-viewer
+
+requirements:
+  build:
+    - cmake
+    - toolchain
+    - boost 1.61.*
+    - hdf5 1.8.17
+    - gdal 2.1.*
+    - spdlib 3.3.0
+    - qt
+  run:
+    - boost 1.61.*
+    - hdf5 1.8.17
+    - gdal 2.1.*
+    - spdlib 3.3.0
+    - qt
+
+about:
+  home: https://bitbucket.org/petebunting/spd-3d-points-viewer/
+  license: GPLv3
+  summary: SPD 3D Points Viewer is a viewer for visualising point cloud data in SPD format.
