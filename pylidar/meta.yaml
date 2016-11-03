@@ -1,6 +1,6 @@
 package:
   name: pylidar
-  version: 0.2.2
+  version: 0.2.3
 
 source:
   hg_url: https://bitbucket.org/chchrsc/pylidar
@@ -21,9 +21,10 @@ requirements:
     - h5py
     - lastools
     - zlib
+    - pynninterp
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - pylidar_index = pylidar.toolbox.cmdline.index:run
     - pylidar_translate = pylidar.toolbox.cmdline.translate:run
