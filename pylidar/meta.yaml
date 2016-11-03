@@ -24,7 +24,7 @@ requirements:
     - pynninterp
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - pylidar_index = pylidar.toolbox.cmdline.index:run
     - pylidar_translate = pylidar.toolbox.cmdline.translate:run
