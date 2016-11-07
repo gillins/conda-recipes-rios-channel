@@ -1,6 +1,6 @@
 package:
   name: pylidar
-  version: 0.2.3
+  version: 0.2.4
 
 source:
   hg_url: https://bitbucket.org/chchrsc/pylidar
@@ -22,6 +22,7 @@ requirements:
     - lastools
     - zlib
     - pynninterp
+    - statsmodels
 
 build:
   number: 1
@@ -32,8 +33,9 @@ build:
     - pylidar_tile = pylidar.toolbox.cmdline.tile:run
     - pylidar_rasterize = pylidar.toolbox.cmdline.rasterize:run
     - pylidar_test = pylidar.testing.testall:run
+    - pylidar_canopy = pylidar.toolbox.cmdline.canopy:run
 
 about:
   home: http://pylidar.org/
   license: GPLv3
-  summary: RIOS for LiDAR
+  summary: Airborne and terrestrial lidar processing tools
