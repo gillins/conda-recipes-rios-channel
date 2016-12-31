@@ -1,42 +1,42 @@
 package:
   name: rsgislib
-  version: "3.0.1176"
+  version: "3.1.0"
 
 build:
     number: 0
 
 source:
   hg_url: https://bitbucket.org/petebunting/rsgislib
-  hg_tag: 3.0.0
+  hg_tag: 3.1.0
 
 requirements:
   build:
     - toolchain
-    - cmake 2.8.*
-    - boost 1.61.*
-    - hdf5 1.8.17
+    - cmake
+    - boost 1.62.*
+    - hdf5 1.8.17|1.8.17.*
     - xerces-c
     - muparser
     - gsl 2.1
-    - geos 3.4.2
+    - geos 3.5.*
     - gdal 2.1.*
-    - kealib 1.4.6
+    - kealib 1.4.*
     - gmp
     - mpfr
-    - cgal 4.8.*
+    - cgal 4.9.*
     - python
   run:
-    - boost 1.61.*
-    - hdf5 1.8.17
+    - boost 1.62.*
+    - hdf5 1.8.17|1.8.17.*
     - xerces-c
     - muparser
     - gsl 2.1
-    - geos 3.4.2
+    - geos 3.5.*
     - gdal 2.1.*
-    - kealib 1.4.6
+    - kealib 1.4.*
     - gmp
     - mpfr
-    - cgal 4.8.*
+    - cgal 4.9.*
     - python
 
 about:
