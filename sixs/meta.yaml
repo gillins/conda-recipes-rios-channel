@@ -12,8 +12,11 @@ requirements:
   build:
     - cmake
     - gcc  # [osx]
+    - m2w64-toolchain  # [win]
+    
   run:
-    - libgfortran
+    - libgfortran  # [unix]
+    - m2w64-gcc-libgfortran  # [win]
 
 test:
   files:
