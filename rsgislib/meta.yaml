@@ -4,41 +4,54 @@ package:
 
 build:
     number: 0
-
+    skip: True  # [py27 and win]
+    features:
+        - vc9  # [win and py27]
+        - vc10  # [win and py34]
+        - vc14  # [win and py>=35]
+        
 source:
   hg_url: https://bitbucket.org/petebunting/rsgislib
-  hg_tag: 3.1.0
+  #hg_tag: 3.1.0
 
 requirements:
   build:
-    - toolchain
     - cmake
     - boost 1.62.*
     - hdf5 1.8.17|1.8.17.*
     - xerces-c
     - muparser
-    - gsl 2.1
+    - gsl
     - geos 3.5.*
     - gdal 2.1.*
     - kealib 1.4.*
-    - gmp
-    - mpfr
+    #- gmp  # [unix]
+    #- mpir 2.7.2  # [win]
+    #- mpfr
     - cgal 4.9.*
     - python
+    - vc   9  # [win and py27]
+    - vc  10  # [win and py34]
+    - vc  14  # [win and py>=35]    
+    
   run:
     - boost 1.62.*
     - hdf5 1.8.17|1.8.17.*
     - xerces-c
     - muparser
-    - gsl 2.1
+    - gsl
     - geos 3.5.*
     - gdal 2.1.*
     - kealib 1.4.*
-    - gmp
-    - mpfr
+    #- gmp  # [unix]
+    #- mpir 2.7.2  # [win]
+    #- mpfr
     - cgal 4.9.*
     - python
-
+    - vc   9  # [win and py27]
+    - vc  10  # [win and py34]
+    - vc  14  # [win and py>=35]
+    
 about:
   home: http://www.rsgislib.org
   license: GPLv3
