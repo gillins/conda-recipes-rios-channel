@@ -1,9 +1,11 @@
 package:
   name: pylidar
-  version: 0.3.0
+  version: 0.3.1
 
 source:
-  hg_url: https://bitbucket.org/chchrsc/pylidar
+  fn: pylidar-0.3.1.tar.gz
+  url: https://bitbucket.org/chchrsc/pylidar/downloads/pylidar-0.3.1.tar.gz
+  sha256: 03d57f437bd5a75f73b90b1da46ee10ff9fb61fa3e1bbb419caa829e754bbb77  
 
 requirements:
   build:

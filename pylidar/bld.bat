@@ -10,6 +10,9 @@ if "%CONDA_PY%" == "34" (
 if "%CONDA_PY%" == "35" (
     set MSVC_VER=140
 ) 
+if "%CONDA_PY%" == "36" (
+    set MSVC_VER=140
+) 
 
 IF "%MSVC_VER%"=="" (
     echo "Python version not supported. Please update bld.bat"

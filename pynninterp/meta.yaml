@@ -13,7 +13,7 @@ requirements:
   build:
     - python
     - numpy x.x
-    - msinttypes  # [win and not py35]
+    - msinttypes  # [win and py27]
   run:
     - python
     - numpy x.x
