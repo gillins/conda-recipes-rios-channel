@@ -1,0 +1,30 @@
+package:
+  name: pulsewaves
+  version: 20170424
+
+source:
+  git_url: https://github.com/PulseWaves/PulseWaves.git
+  patches:
+    - pulsewaves_dll.h.patch  # [not (win and py27)]
+    - pulsefilter.cpp.patch
+    - pulsetransform.cpp.patch
+
+build:
+  number: 0
+  skip: True  # [win and py36]
+  features:
+    - vc9  # [win and py27]
+    - vc10  # [win and py34]
+    - vc14  # [win and py35]
+
+requirements:
+  build:
+    - python  # [win]
+    - cmake
+
+about:
+  home: https://rapidlasso.com/pulsewaves/
+  license: LGPL2.1
+  license_file: COPYING.txt
+  summary: An open source effort for a vendor-neutral exchange format for geo-referenced full waveform LiDAR
+

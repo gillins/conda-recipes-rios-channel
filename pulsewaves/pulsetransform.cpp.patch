@@ -1,0 +1,11 @@
+--- src/pulsetransform.cpp.orig	2017-04-24 12:40:43.382786727 +1000
++++ src/pulsetransform.cpp	2017-04-24 12:40:58.522786687 +1000
+@@ -837,7 +837,7 @@
+ #ifdef _WIN32
+       add_operation(new PULSEoperationTranslateT(_atoi64(argv[i+1])));
+ #else
+-      add_operation(new PULSEoperationTranslateT(atoill(argv[i+1])));
++      add_operation(new PULSEoperationTranslateT(atoll(argv[i+1])));
+ #endif
+       *argv[i]='\0'; *argv[i+1]='\0'; i+=1; 
+     }
