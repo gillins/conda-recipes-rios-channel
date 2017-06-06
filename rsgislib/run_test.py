@@ -1,4 +1,3 @@
-from __future__ import print_function
 
 import rsgislib
 from rsgislib import imagecalibration
@@ -15,5 +14,4 @@ from rsgislib import zonalstats
 from rsgislib import histocube
 from rsgislib import imagemorphology
     
-print('All libraries imported OK')
 

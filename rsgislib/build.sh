@@ -61,7 +61,7 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
     -D CMAKE_BUILD_TYPE=Release \
 	.
 
-make
+make -j $CPU_COUNT
 make install
 
 cd python_tests/RSGISLibTests
