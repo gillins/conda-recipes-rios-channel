@@ -1,7 +1,4 @@
 
-REM development branch for now
-hg up development
-
 REM Need this otherwise cmake doesn't work for me
 %LIBRARY_BIN%\cmake -G "NMake Makefiles" -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -D CMAKE_BUILD_TYPE=Release ^
@@ -36,5 +33,9 @@ nmake
 if errorlevel 1 exit 1
 
 nmake install
+if errorlevel 1 exit 1
+
+cd python_tests\RSGISLibTests
+%PYTHON% RSGIStests.py --all
 if errorlevel 1 exit 1
 

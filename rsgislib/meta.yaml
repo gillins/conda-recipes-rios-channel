@@ -1,9 +1,10 @@
 package:
   name: rsgislib
-  version: "3.1.0"
+  version: "3.2.0"
 
 build:
     number: 0
+    # CGAL etc do not support vc9
     skip: True  # [py27 and win]
     features:
         - vc9  # [win and py27]
@@ -17,36 +18,32 @@ source:
 requirements:
   build:
     - cmake
-    - boost 1.62.*
+    - boost 1.63.*
     - hdf5 1.8.17|1.8.17.*
     - xerces-c
     - muparser
     - gsl
-    - geos 3.5.*
-    - gdal 2.1.*
-    - kealib 1.4.*
-    #- gmp  # [unix]
-    #- mpir 2.7.2  # [win]
-    #- mpfr
-    - cgal 4.9.*
+    - geos 3.5.1
+    - gdal 2.2.*
+    - kealib
+    # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
+    - cgal
     - python
     - vc   9  # [win and py27]
     - vc  10  # [win and py34]
     - vc  14  # [win and py>=35]    
     
   run:
-    - boost 1.62.*
+    - boost 1.63.*
     - hdf5 1.8.17|1.8.17.*
     - xerces-c
     - muparser
     - gsl
-    - geos 3.5.*
-    - gdal 2.1.*
-    - kealib 1.4.*
-    #- gmp  # [unix]
-    #- mpir 2.7.2  # [win]
-    #- mpfr
-    - cgal 4.9.*
+    - geos 3.5.1
+    - gdal 2.2.*
+    - kealib
+    # cgal pulls in appropriate mpir/mpfr/gmp etc for platform
+    - cgal
     - python
     - vc   9  # [win and py27]
     - vc  10  # [win and py34]

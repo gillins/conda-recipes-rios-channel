@@ -63,3 +63,6 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
 
 make
 make install
+
+cd python_tests/RSGISLibTests
+$PYTHON RSGIStests.py --all
