@@ -1,22 +1,19 @@
+{% set version = "20170625" %}
+
 package:
   name: lastools
-  version: "20160606"
+  version: {{ version }}
 
 source:
-  fn: lastools.zip
-  url: http://www.cs.unc.edu/~isenburg/lastools/download/lastools.zip
-  patches:
-    - CMakeLists.patch
-    - mydefs.patch  # [win]
-    - stdext.patch  # [win and py27]
-    - stdext2.patch  # [win and py27]
+  fn: {{ version }}.tar.gz
+  url: https://github.com/gillins/LAStools/archive/{{ version }}.tar.gz
+  sha256: 04d76550897592d00c2486618e6c943ec47293f76438d53b1c4b10fd22e5f051
 
 build:
   number: 0
   skip: True  # [win and py36]
   features:
     - vc9  # [win and py27]
-    - vc10  # [win and py34]
     - vc14  # [win and py35]
 
 requirements:
@@ -24,9 +21,20 @@ requirements:
     - python  # [win]
     - cmake
     - toolchain
-    
+    - vc9  # [win and py27]
+    - vc14  # [win and py35]
+
+  run:
+    - vc9  # [win and py27]
+    - vc14  # [win and py35]
+
 about:
   home: http://www.cs.unc.edu/~isenburg/lastools/
   license: LGPL2.1
   license_file: LICENSE.txt
   summary: award-winning software for efficient LiDAR processing (with LASzip)
+
+extra:
+  recipe-maintainers:
+    - danclewley
+    - gillins
