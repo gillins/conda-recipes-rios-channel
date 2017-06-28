@@ -1,7 +1,4 @@
 
-copy %RECIPE_DIR%\CMakeLists.txt .
-if errorlevel 1 exit 1
-
 cmake -G "NMake Makefiles" -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% -D CMAKE_BUILD_TYPE=Release .
 if errorlevel 1 exit 1
 
