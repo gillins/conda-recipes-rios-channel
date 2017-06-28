@@ -13,20 +13,40 @@ build:
   number: 0
   skip: True  # [win and py36]
   features:
-    - vc9  # [win and py27]
-    - vc14  # [win and py35]
+    - vc9     # [win and py27]
+    - vc14    # [win and py35]
 
 requirements:
   build:
     - python  # [win]
     - cmake
     - toolchain
-    - vc9  # [win and py27]
-    - vc14  # [win and py35]
+    - vc9     # [win and py27]
+    - vc14    # [win and py35]
 
   run:
-    - vc9  # [win and py27]
-    - vc14  # [win and py35]
+    - vc9     # [win and py27]
+    - vc14    # [win and py35]
+
+test:
+  commands:
+    - if not exist %LIBRARY_BIN%\\las.dll exit 1        # [win]
+    - if not exist %LIBRARY_LIB%\\las.lib exit 1        # [win]
+    - if not exist %LIBRARY_INC%\\lasreader.hpp exit 1  # [win]
+    - if not exist %LIBRARY_INC%\\laswriter.hpp exit 1  # [win]
+    - test -f $PREFIX/lib/liblas.so                     # [linux]
+    - test -f $PREFIX/lib/liblas.dylib                  # [osx]
+    - test -f $PREFIX/include/lasreader.hpp             # [unix]
+    - test -f $PREFIX/include/laswriter.hpp             # [unix]
+    - lasdiff -h
+    - las2txt -h
+    - lasindex -h
+    - lasmerge -h
+    - txt2las -h
+    - lasprecision -h
+    - las2las -h
+    - laszip -h
+    - lasinfo -h
 
 about:
   home: http://www.cs.unc.edu/~isenburg/lastools/
@@ -36,5 +56,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - danclewley
     - gillins
