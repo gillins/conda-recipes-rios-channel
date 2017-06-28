@@ -16,6 +16,7 @@ requirements:
   build:
     - python  # [win]
     - cmake
+    - msinttypes  # [win and py27]]
     - vc 9    # [win and py27]
     - vc 14   # [win and py35]
   run:
