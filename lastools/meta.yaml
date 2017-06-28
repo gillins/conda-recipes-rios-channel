@@ -7,7 +7,7 @@ package:
 source:
   fn: {{ version }}.tar.gz
   url: https://github.com/gillins/LAStools/archive/{{ version }}.tar.gz
-  sha256: 04d76550897592d00c2486618e6c943ec47293f76438d53b1c4b10fd22e5f051
+  sha256: f2f2b9a798ce7642a820aa90e3cbd8550a2ed0d2d50d5422a16483a944b605ff
 
 build:
   number: 0
@@ -21,12 +21,12 @@ requirements:
     - python  # [win]
     - cmake
     - toolchain
-    - vc9     # [win and py27]
-    - vc14    # [win and py35]
+    - vc 9    # [win and py27]
+    - vc 14   # [win and py35]
 
   run:
-    - vc9     # [win and py27]
-    - vc14    # [win and py35]
+    - vc 9    # [win and py27]
+    - vc 14   # [win and py35]
 
 test:
   commands:
