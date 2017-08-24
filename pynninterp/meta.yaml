@@ -6,17 +6,22 @@ source:
   hg_url: https://bitbucket.org/petebunting/pynninterp
 
 build:
-  number: 5
+  number: 6
   script: python setup.py install
 
 requirements:
   build:
     - python
-    - numpy x.x
+    - toolchain
+    - numpy 1.8.*  # [not (win and (py35 or py36))]
+    - numpy 1.9.*  # [win and py35]
+    - numpy 1.11.*  # [win and py36]
     - msinttypes  # [win and py27]
   run:
     - python
-    - numpy x.x
+    - numpy >=1.8  # [not (win and (py35 or py36))]
+    - numpy >=1.9  # [win and py35]
+    - numpy >=1.11  # [win and py36]
 
 test:
     imports:
