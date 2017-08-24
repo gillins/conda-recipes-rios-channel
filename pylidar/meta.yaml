@@ -18,6 +18,7 @@ requirements:
     - zlib
     - gdal 2.1.*
     - toolchain
+    - msinttypes  # [win and py27]
   run:
     - python
     - numpy >=1.8  # [not (win and (py35 or py36))]
