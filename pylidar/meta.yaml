@@ -1,33 +1,43 @@
 package:
   name: pylidar
-  version: 0.3.1
+  version: 0.4.0
 
 source:
-  fn: pylidar-0.3.1.tar.gz
-  url: https://bitbucket.org/chchrsc/pylidar/downloads/pylidar-0.3.1.tar.gz
-  sha256: 03d57f437bd5a75f73b90b1da46ee10ff9fb61fa3e1bbb419caa829e754bbb77  
+  fn: pylidar-0.4.0.tar.gz
+  url: https://bitbucket.org/chchrsc/pylidar/downloads/pylidar-0.4.0.tar.gz
+  sha256: 6da5ed90e8947e60427de4e9008bf67625d2a055eeb760598665492f58cd41ae
 
 requirements:
   build:
     - python
-    - numpy x.x
+    - numpy 1.8.*  # [not (win and (py35 or py36))]
+    - numpy 1.9.*  # [win and py35]
+    - numpy 1.11.*  # [win and py36]
     - lastools
+    - pulsewaves
     - zlib
+    - gdal 2.1.*
     - toolchain
   run:
     - python
-    - numpy x.x
-    - gdal
+    - numpy >=1.8  # [not (win and (py35 or py36))]
+    - numpy >=1.9  # [win and py35]
+    - numpy >=1.11  # [win and py36]
+    - gdal 2.1.*
     - rios
     - numba
     - h5py
     - lastools
+    - pulsewaves
     - zlib
     - pynninterp
     - statsmodels
 
 build:
-  number: 1
+  number: 0
+  script_env:
+    - PYLIDAR_TESTDATA
+    - LD_LIBRARY_PATH
   entry_points:
     - pylidar_index = pylidar.toolbox.cmdline.index:run
     - pylidar_translate = pylidar.toolbox.cmdline.translate:run
