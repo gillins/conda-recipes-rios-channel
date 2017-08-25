@@ -33,6 +33,8 @@ requirements:
     - zlib
     - pynninterp
     - statsmodels
+    # not sure why setuptools needed on OSX but gdalchksum.py won't run without it
+    - setuptools  # [osx]
 
 build:
   number: 0
