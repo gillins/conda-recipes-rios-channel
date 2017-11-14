@@ -3,29 +3,31 @@ package:
   version: "3.3.0"
 
 build:
-    number: 2
+    number: 4
 
 source:
   hg_url: https://bitbucket.org/petebunting/spdlib
 
 requirements:
   build:
+    - python
     - cmake
     - toolchain
     - boost-cpp 1.64.*
     - hdf5 1.8.18|1.8.18.*
     - xerces-c 
     - gsl 2.2.*
-    - gdal 2.1.*
+    - libgdal 2.1.*
     - geos 3.5.1
     - cgal
     - lastools
   run:
+    - python
     - boost-cpp 1.64.*
     - hdf5 1.8.18|1.8.18.*
     - xerces-c
     - gsl 2.2.*
-    - gdal 2.1.*
+    - libgdal 2.1.*
     - geos 3.5.1
     - cgal
     - lastools
