@@ -3,7 +3,7 @@ package:
   version: "2.3.0"
 
 build:
-  number: 0
+  number: 1
 
 source:
   hg_url: https://bitbucket.org/petebunting/spd-3d-points-viewer
@@ -16,13 +16,13 @@ requirements:
     - hdf5 1.8.17
     - gdal 2.1.*
     - spdlib 3.3.0
-    - qt
+    - qt 5.6.*
   run:
     - boost 1.61.*
     - hdf5 1.8.17
     - gdal 2.1.*
     - spdlib 3.3.0
-    - qt
+    - qt 5.6.*
 
 about:
   home: https://bitbucket.org/petebunting/spd-3d-points-viewer/

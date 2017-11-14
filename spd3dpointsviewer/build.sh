@@ -37,8 +37,4 @@ fi
 make
 make install
 
-if [ `uname` == Darwin ]; then
-    mv $PREFIX/bin/SPDPointsViewer.app/Contents/MacOS/SPDPointsViewer $PREFIX/bin/
-    rm -Rf $PREFIX/bin/SPDPointsViewer.app
-fi
 
