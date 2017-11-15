@@ -25,7 +25,7 @@ requirements:
     - numpy 1.11.*  # [win and py36]
     - cmake
     - toolchain
-    - boost-cpp 1.64.*
+    - boost 1.64.*
     - hdf5 1.8.18|1.8.18.*
     - xerces-c 
     - gsl 2.2.*
@@ -38,7 +38,7 @@ requirements:
     - numpy >=1.8  # [not (win and (py35 or py36))]
     - numpy >=1.9  # [win and py35]
     - numpy >=1.11  # [win and py36]
-    - boost-cpp 1.64.*
+    - boost 1.64.*
     - hdf5 1.8.18|1.8.18.*
     - xerces-c
     - gsl 2.2.*
