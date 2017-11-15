@@ -3,7 +3,12 @@ package:
   version: "3.3.0"
 
 build:
-    number: 4
+    number: 5
+    # CGAL etc do not support earlier than vc14
+    skip: True  # [win and py<35]
+    features:
+        - vc9  # [win and py27]
+        - vc14  # [win and (py35 or py36)]
 
 source:
   hg_url: https://bitbucket.org/petebunting/spdlib
@@ -11,6 +16,10 @@ source:
 requirements:
   build:
     - python
+    # npgpython bindings link to numpy
+    - numpy 1.8.*  # [not (win and (py35 or py36))]
+    - numpy 1.9.*  # [win and py35]
+    - numpy 1.11.*  # [win and py36]
     - cmake
     - toolchain
     - boost-cpp 1.64.*
@@ -23,6 +32,9 @@ requirements:
     - lastools
   run:
     - python
+    - numpy >=1.8  # [not (win and (py35 or py36))]
+    - numpy >=1.9  # [win and py35]
+    - numpy >=1.11  # [win and py36]
     - boost-cpp 1.64.*
     - hdf5 1.8.18|1.8.18.*
     - xerces-c
