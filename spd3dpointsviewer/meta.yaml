@@ -3,7 +3,7 @@ package:
   version: "2.3.0"
 
 build:
-  number: 2
+  number: 3
 
 source:
   hg_url: https://bitbucket.org/petebunting/spd-3d-points-viewer
