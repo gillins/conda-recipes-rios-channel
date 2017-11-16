@@ -3,7 +3,7 @@ package:
   version: "3.3.0"
 
 build:
-    number: 5
+    number: 6
     # CGAL etc do not support earlier than vc14
     skip: True  # [win and py<35]
     features:
@@ -49,7 +49,14 @@ requirements:
 
 test:
   commands:
+    - if not exist %LIBRARY_BIN%\\libspd.dll exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\libspd.lib exit 1  # [win]
+    - test -f $PREFIX/lib/libspd.so                  # [linux]
+    - test -f $PREFIX/lib/libspd.dylib               # [osx]
     - spdtranslate -h 
+  imports:
+    - spdpy
+    - spdpy2
 
 about:
   home: http://www.spdlib.org
