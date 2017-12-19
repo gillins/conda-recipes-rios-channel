@@ -4,7 +4,12 @@ package:
 
 build:
   number: 3
-
+  # CGAL etc do not support earlier than vc14
+  skip: True  # [win and py<35]
+  features:
+      - vc9  # [win and py27]
+      - vc14  # [win and (py35 or py36)]
+      
 source:
   hg_url: https://bitbucket.org/petebunting/spd-3d-points-viewer
 
