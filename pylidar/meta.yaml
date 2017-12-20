@@ -15,8 +15,8 @@ requirements:
     - numpy 1.11.*  # [win and py36]
     - lastools
     - pulsewaves
-    - zlib
-    - gdal 2.1.*
+    - zlib 1.2.11
+    - gdal 2.2.*
     - toolchain
     - msinttypes  # [win and py27]
   run:
@@ -24,20 +24,18 @@ requirements:
     - numpy >=1.8  # [not (win and (py35 or py36))]
     - numpy >=1.9  # [win and py35]
     - numpy >=1.11  # [win and py36]
-    - gdal 2.1.*
+    - gdal 2.2.*
     - rios
     - numba
     - h5py
     - lastools
     - pulsewaves
-    - zlib
+    - zlib 1.2.11
     - pynninterp
     - statsmodels
-    # not sure why setuptools needed on OSX but gdalchksum.py won't run without it
-    - setuptools  # [osx]
 
 build:
-  number: 0
+  number: 1
   script_env:
     - PYLIDAR_TESTDATA
     # LD_LIBRARY_PATH needed for Riegl driver
@@ -54,5 +52,5 @@ build:
 about:
   home: http://pylidar.org/
   license: GPL3
-  license_file: LICENSE.txt
+  #license_file: LICENSE.txt
   summary: Airborne and terrestrial lidar processing tools
