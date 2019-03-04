@@ -1,0 +1,11 @@
+--- setup.py.orig	2019-03-04 11:05:37.722215612 +1000
++++ setup.py	2019-03-04 11:05:45.334347927 +1000
+@@ -30,7 +30,7 @@
+ # Are we installing the command line scripts?
+ # this is an experimental option for users who are
+ # using the Python entry point feature of setuptools and Conda instead
+-NO_INSTALL_CMDLINE = int(os.getenv('MAPACC_NOCMDLINE', '0')) > 0
++NO_INSTALL_CMDLINE = True
+ 
+ if NO_INSTALL_CMDLINE:
+     scripts_list = None

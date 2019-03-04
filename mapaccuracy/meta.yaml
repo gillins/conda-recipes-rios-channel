@@ -4,24 +4,39 @@ package:
 
 source:
   git_url: https://gillins@bitbucket.org/landcareresearch/mapaccuracy.git
+  patches:
+    # Force no command line install (use entry points)
+    # noarch doesn't work with env vars
+    - nocmdline.patch
+
+build:
+  noarch: python
+  number: 4
+  script: python setup.py install
+  entry_points:
+    - mapaccuracy = mapaccuracy.mapaccuracyapplication:runApplication
+    - mapaccuracy_txt2shp = mapaccuracy.txt2shp:run
 
 requirements:
-  build:
+  host:
     - python
-    - numpy
-    - gdal 2.1.*
+    - numpy 1.11
+    # TODO: update these versions to match conda forge pinning
+    - gdal 2.4.*
     - pyqt 5.6.*
     - tuiview
   run:
     - python
-    - numpy
-    - gdal 2.1.*
+    - {{ pin_compatible('numpy') }}
+    - gdal 2.4.*
     - pyqt 5.6.*
     - tuiview
 
-build:
-  number: 2
-  script: python setup.py install
+test:
+  imports:
+    - mapaccuracy
+  commands:
+    - mapaccuracy -h
 
 about:
   home: https://bitbucket.org/landcareresearch/mapaccuracy
