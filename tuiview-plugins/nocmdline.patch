@@ -1,0 +1,11 @@
+--- setup.py.orig	2019-03-04 14:08:58.210090950 +1000
++++ setup.py	2019-03-04 14:09:07.114669737 +1000
+@@ -21,7 +21,7 @@
+ # Are we installing the command line scripts?
+ # this is an experimental option for users who are
+ # using the Python entry point feature of setuptools and Conda instead
+-NO_INSTALL_CMDLINE = int(os.getenv('TUIVIEW_NOCMDLINE', '0')) > 0
++NO_INSTALL_CMDLINE = True
+ 
+ if NO_INSTALL_CMDLINE:
+     scripts_list = None

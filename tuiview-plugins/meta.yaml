@@ -1,0 +1,37 @@
+package:
+  name: tuiview-plugins
+  version: 1.0.0
+
+source:
+  hg_url: https://bitbucket.org/chchrsc/tuiview-plugins
+  patches:
+    # Force no command line install (use entry points)
+    # noarch doesn't work with env vars
+    - nocmdline.patch
+
+build:
+  noarch: python
+  number: 0
+  script: python setup.py install
+  entry_points:
+    - tuiview_pluginmgr.py = tuiview_plugins.pluginmgr:run
+
+requirements:
+  host:
+    - python
+    # just assume tuiview will bring in everything required
+    - tuiview
+  run:
+    - python
+    - tuiview
+
+test:
+  imports:
+    - tuiview_plugins
+  commands:
+    - tuiview_pluginmgr.py -h
+
+about:
+  home: https://bitbucket.org/chchrsc/tuiview-plugins
+  license: GPLv3
+  summary: These plugins extend TuiView functionality
