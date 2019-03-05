@@ -11,10 +11,10 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: python setup.py install
   entry_points:
-    - tuiview_pluginmgr.py = tuiview_plugins.pluginmgr:run
+    - tuiviewpluginmgr = tuiview_plugins.pluginmgr:run
 
 requirements:
   host:
@@ -29,7 +29,7 @@ test:
   imports:
     - tuiview_plugins
   commands:
-    - tuiview_pluginmgr.py -h
+    - tuiviewpluginmgr -h
 
 about:
   home: https://bitbucket.org/chchrsc/tuiview-plugins
