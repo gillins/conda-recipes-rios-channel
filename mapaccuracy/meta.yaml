@@ -1,6 +1,6 @@
 package:
   name: mapaccuracy
-  version: 0.9.3
+  version: 0.9.4
 
 source:
   git_url: https://gillins@bitbucket.org/landcareresearch/mapaccuracy.git
@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 4
+  number: 0
   script: python setup.py install
   entry_points:
     - mapaccuracy = mapaccuracy.mapaccuracyapplication:runApplication
