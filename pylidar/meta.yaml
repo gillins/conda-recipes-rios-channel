@@ -1,41 +1,16 @@
 package:
   name: pylidar
-  version: 0.4.0
+  version: 0.4.1
 
 source:
-  fn: pylidar-0.4.0.tar.gz
-  url: https://bitbucket.org/chchrsc/pylidar/downloads/pylidar-0.4.0.tar.gz
-  sha256: 6da5ed90e8947e60427de4e9008bf67625d2a055eeb760598665492f58cd41ae
-
-requirements:
-  build:
-    - python
-    - numpy 1.8.*  # [not (win and (py35 or py36))]
-    - numpy 1.9.*  # [win and py35]
-    - numpy 1.11.*  # [win and py36]
-    - lastools 20171231
-    - pulsewaves 20160127
-    - zlib 1.2.11
-    - gdal 2.2.*
-    - toolchain
-    - msinttypes  # [win and py27]
-  run:
-    - python
-    - numpy >=1.8  # [not (win and (py35 or py36))]
-    - numpy >=1.9  # [win and py35]
-    - numpy >=1.11  # [win and py36]
-    - gdal 2.2.*
-    - rios
-    - numba
-    - h5py
-    - lastools 20171231
-    - pulsewaves 20160127
-    - zlib 1.2.11
-    - pynninterp
-    - statsmodels
+  #fn: pylidar-0.4.0.tar.gz
+  #url: https://bitbucket.org/chchrsc/pylidar/downloads/pylidar-0.4.0.tar.gz
+  #sha256: 6da5ed90e8947e60427de4e9008bf67625d2a055eeb760598665492f58cd41ae
+  hg_url: https://bitbucket.org/chchrsc/pylidar
 
 build:
-  number: 2
+  number: 12
+  skip: True  # [win and py27]
   script_env:
     - PYLIDAR_TESTDATA
     # LD_LIBRARY_PATH needed for Riegl driver
@@ -48,6 +23,31 @@ build:
     - pylidar_rasterize = pylidar.toolbox.cmdline.rasterize:run
     - pylidar_test = pylidar.testing.testall:run
     - pylidar_canopy = pylidar.toolbox.cmdline.canopy:run
+  
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - python
+    - numpy 1.14
+    - lastools 20171231
+    - pulsewaves 20160127
+    - zlib 1.2.*
+    - gdal 3.0.*
+    - toolchain
+  run:
+    - python
+    - {{ pin_compatible('numpy') }}
+    - gdal 3.0.*
+    - rios
+    - numba
+    - h5py
+    - lastools 20171231
+    - pulsewaves 20160127
+    - zlib 1.2.*
+    - pynninterp
+    - statsmodels
 
 about:
   home: http://pylidar.org/
