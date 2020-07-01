@@ -1,12 +1,13 @@
+{% set version = "0.4.3" %}
+
 package:
   name: pylidar
-  version: 0.4.2
+  version: {{ version }}
 
 source:
-  #fn: pylidar-0.4.0.tar.gz
-  #url: https://bitbucket.org/chchrsc/pylidar/downloads/pylidar-0.4.0.tar.gz
-  #sha256: 6da5ed90e8947e60427de4e9008bf67625d2a055eeb760598665492f58cd41ae
-  git_url: https://github.com/ubarsc/pylidar.git
+  url: https://github.com/ubarsc/pylidar/releases/download/pylidar-{{ version }}/pylidar-{{ version }}.tar.gz
+  sha256: 3d0d0fa3614082da7bb83e993d7ea9aa447e9d7dce0894eab804db233211e757
+  #git_url: https://github.com/ubarsc/pylidar.git
 
 build:
   number: 0
@@ -35,7 +36,6 @@ requirements:
     - pulsewaves 20160127
     - zlib 1.2.*
     - gdal 3.0.*
-    - toolchain
   run:
     - python
     - {{ pin_compatible('numpy') }}
