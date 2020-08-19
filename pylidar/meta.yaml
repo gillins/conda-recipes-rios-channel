@@ -5,12 +5,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/ubarsc/pylidar/releases/download/pylidar-{{ version }}/pylidar-{{ version }}.tar.gz
-  sha256: 3d0d0fa3614082da7bb83e993d7ea9aa447e9d7dce0894eab804db233211e757
-  #git_url: https://github.com/ubarsc/pylidar.git
+  #url: https://github.com/ubarsc/pylidar/releases/download/pylidar-{{ version }}/pylidar-{{ version }}.tar.gz
+  #sha256: 3d0d0fa3614082da7bb83e993d7ea9aa447e9d7dce0894eab804db233211e757
+  git_url: https://github.com/ubarsc/pylidar.git
+  git_tag: dev
 
 build:
-  number: 0
+  number: 2
   skip: True  # [win and py27]
   script_env:
     - PYLIDAR_TESTDATA
