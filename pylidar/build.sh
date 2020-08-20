@@ -4,7 +4,7 @@
 # and export the appropriate env vars if so.
 RIVLIB_ROOT=/opt/riegl/rivlib/rivlib-2_5_6-x86_64-linux-gcc55
 RIWAVELIB_ROOT=/opt/riegl/riwavelib/riwavelib_wfm-2_5_7-x86_64-linux-gcc55
-RDBLIB_ROOT=/opt/riegl/rdblib/rdblib-2.2.1-x86_64-linux
+RDBLIB_ROOT=/opt/riegl/rdblib/rdblib-2.2.3-x86_64-linux
 
 if [ -d "$RIVLIB_ROOT" ]; then
     export RIVLIB_ROOT

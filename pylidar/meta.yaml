@@ -1,17 +1,17 @@
-{% set version = "0.4.3" %}
+{% set version = "0.4.4" %}
 
 package:
   name: pylidar
   version: {{ version }}
 
 source:
-  #url: https://github.com/ubarsc/pylidar/releases/download/pylidar-{{ version }}/pylidar-{{ version }}.tar.gz
-  #sha256: 3d0d0fa3614082da7bb83e993d7ea9aa447e9d7dce0894eab804db233211e757
-  git_url: https://github.com/ubarsc/pylidar.git
-  git_tag: dev
+  url: https://github.com/ubarsc/pylidar/releases/download/pylidar-{{ version }}/pylidar-{{ version }}.tar.gz
+  sha256: c6ba33b4759e23c6640b40accd246e234c1d350873da28d7e81e09a8d03d7d3d
+  #git_url: https://github.com/ubarsc/pylidar.git
+  #git_tag: dev
 
 build:
-  number: 2
+  number: 0
   skip: True  # [win and py27]
   script_env:
     - PYLIDAR_TESTDATA
