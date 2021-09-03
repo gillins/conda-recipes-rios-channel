@@ -1,0 +1,33 @@
+{% set version = "0.1" %}
+
+package:
+  name: riegl_tools
+  version: {{ version }}
+
+source:
+  git_url: https://gitlab.com/jrsrp/sys/lidar/riegl_tools.git
+
+build:
+  number: 0
+  skip: True  # [win and py27]
+  
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - python
+    - numpy
+  run:
+    - python
+    - {{ pin_compatible('numpy') }}
+    
+test:
+  imports:
+    - riegl_tools.rieglrdb
+
+about:
+  home: http://pylidar.org/
+  license: GPL3
+  license_file: LICENSE.txt
+  summary: Airborne and terrestrial lidar processing tools
