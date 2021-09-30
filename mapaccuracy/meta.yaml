@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 3
   script: python setup.py install
   entry_points:
     - mapaccuracy = mapaccuracy.mapaccuracyapplication:runApplication
@@ -20,16 +20,8 @@ build:
 requirements:
   host:
     - python
-    - numpy 1.11
-    # TODO: update these versions to match conda forge pinning
-    - gdal 2.4.*
-    - pyqt 5.9.*
-    - tuiview
   run:
     - python
-    - {{ pin_compatible('numpy') }}
-    - gdal 2.4.*
-    - pyqt 5.9.*
     - tuiview
 
 test:
