@@ -8,7 +8,7 @@ source:
   git_url: https://gitlab.com/jrsrp/sys/lidar/riegl_tools.git
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and py27]
   
 requirements:
